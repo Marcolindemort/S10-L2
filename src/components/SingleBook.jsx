@@ -1,15 +1,15 @@
 import { Card } from "react-bootstrap";
 /*import CommentArea from "./CommentArea";*/
 
-const SingleBook = (props) => {
+const SingleBook = ({ changeLibroSelezionato, book, libroSelezionato }) => {
 	return (
 		<>
 			<Card
-				onClick={() => props.changeLibroSelezionato(props.book.asin)}
-				style={{ border: props.libroSelezionato === props.book.asin ? "3px solid red" : "none" }}>
-				<Card.Img variant="top" src={props.book.img} />
+				onClick={() => changeLibroSelezionato(book.asin)}
+				style={{ border: libroSelezionato === book.asin ? "3px solid red" : "none" }}>
+				<Card.Img variant="top" src={book.img} />
 				<Card.Body>
-					<Card.Title style={{ color: "black" }}>{props.book.title}</Card.Title>
+					<Card.Title style={{ color: "black" }}>{book.title}</Card.Title>
 				</Card.Body>
 			</Card>
 		</>
