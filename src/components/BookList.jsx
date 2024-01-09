@@ -3,7 +3,7 @@ import { Col, Form, Row } from "react-bootstrap";
 import CommentArea from "./CommentArea";
 import { useState } from "react";
 
-const BookList = (props) => {
+const BookList = ({ books }) => {
 	/*state = {
 		searchQuery: "",
 		libroSelezionato: null,
@@ -35,7 +35,7 @@ const BookList = (props) => {
 			<Row>
 				<Col md={8}>
 					<Row className="g-2 mt-3">
-						{props.books
+						{books
 							.filter((b) => b.title.toLowerCase().includes(searchQuery))
 							.map((b) => (
 								<Col xs={12} md={6} key={b.asin}>
